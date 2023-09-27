@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.concesionario</groupId>
+    <artifactId>serverconcesionario</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.objeto.carro</groupId>
+            <artifactId>objetocarro</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+          <groupId>com.google.cloud.tools</groupId>
+          <artifactId>jib-maven-plugin</artifactId>
+          <version>3.4.0</version>
+          <configuration>
+            <to>
+              <image>registry.hub.docker.com/jeffersonvilla/server-socket-concesionario</image>
+            </to>
+            <container>
+        <ports>
+            <port>1148</port>
+        </ports>
+    </container>
+          </configuration>
+        </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
